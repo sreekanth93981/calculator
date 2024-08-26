@@ -15,10 +15,6 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: 'latest'
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -27,7 +23,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: 'D:\a\1\s\**\*.sln'
+    projects: '**/*.sln'
 
 - task: VSTest@2
   inputs:
